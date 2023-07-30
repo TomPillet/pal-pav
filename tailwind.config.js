@@ -21,7 +21,7 @@ export default {
                 'shadowed-white': '#F9F9F9',
             },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'source': ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
             },
         },
     },

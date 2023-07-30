@@ -16,9 +16,9 @@ export default {
                 'red': '#FF0000',
                 'passion': '#920000',
                 'bordeaux': '#6D0711',
-                'light-gray': '#A4A4A4',
+                'lightgray': '#A4A4A4',
                 'gray': '#201E24',
-                'shadowed-white': '#F9F9F9',
+                'shadowedWhite': '#F9F9F9',
             },
             fontFamily: {
                 'source': ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
@@ -27,4 +27,7 @@ export default {
     },
 
     plugins: [forms],
+    safelist: [{
+        pattern: /(bg|text|border)-(red|passion|bordeaux|lightgray|gray|shadowedWhite)/
+    }]
 };

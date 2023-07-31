@@ -4,7 +4,14 @@ import NavLink from "./NavLink.vue";
 defineProps<{
   canLogin?: boolean;
   canRegister?: boolean;
+  activeSpace: string;
 }>();
+
+const navLinks = [
+    { id: 'animes&mangas', color: 'red', icon: 'torii-gate', title: 'Animes & mangas' },
+    { id: 'films&series', color: 'passion', icon: 'clapperboard', title: 'Films & series' },
+    { id: 'books', color: 'bordeaux', icon: 'book', title: 'Livres' },
+]
 </script>
 
 <template>
@@ -15,22 +22,10 @@ defineProps<{
 
     <div class="my-auto">
         <ul class="block flex-col">
-            <li class="my-12">
-                <NavLink :href="'#'" :bgColor="'red'" :active="false">
-                    <font-awesome-icon :icon="['fas', 'torii-gate']" />
-                    Animes & mangas
-                </NavLink>
-            </li>
-            <li class="my-12">
-                <NavLink :href="'#'" :bgColor="'passion'" :active="true">
-                    <font-awesome-icon :icon="['fas', 'clapperboard']" />
-                    Films & séries
-                </NavLink>
-            </li>
-            <li class="my-12">
-                <NavLink :href="'#'" :bgColor="'bordeaux'" :active="false">
-                    <font-awesome-icon :icon="['fas', 'book']" />
-                    Livres
+            <li v-for="link in navLinks" class="my-12">
+                <NavLink :href="`/${link.id}`" :bgColor="link.color" :active="(activeSpace === link.id)">
+                    <font-awesome-icon :icon="['fas', link.icon]" />
+                    {{link.title}}
                 </NavLink>
             </li>
         </ul>
@@ -38,14 +33,14 @@ defineProps<{
 
     <div class="basis-2/12 flex flex-col justify-end ">
         <ul class="flex flex-row justify-evenly mb-12 px-4">
-            <li class="rounded-full hover:shadow-md">
-                <a href="#">
-                    <font-awesome-icon class="text-gray text-2xl p-4" :icon="['fas', 'user']" />
+            <li class="user-btns">
+                <a href="/login">
+                    <font-awesome-icon class="user-btns-icon" :icon="['fas', 'user']" />
                 </a>
             </li>
-            <li class="rounded-full hover:shadow-md">
+            <li class="user-btns">
                 <a href="#">
-                    <font-awesome-icon class="text-gray text-2xl p-4" :icon="['fas', 'bell']" />
+                    <font-awesome-icon class="user-btns-icon" :icon="['fas', 'bell']" />
                 </a>
             </li>
         </ul>
@@ -53,4 +48,19 @@ defineProps<{
   </div>
 </template>
 
-<style></style>
+<style>
+@tailwind components;
+@layer components {
+    .user-btns {
+        border-radius: theme('borderRadius.full');
+    }
+    .user-btns:hover {
+        box-shadow: theme('boxShadow.md');
+    }
+    .user-btns-icon {
+        color: theme('colors.gray');
+        font-size: theme('fontSize.2xl');
+        padding: theme('padding.4')
+    }
+}
+</style>

@@ -8,10 +8,12 @@ const props = defineProps<{
     bgColor: string;
 }>();
 
+const commonClasses = "block w-5/6 m-auto p-2 text-center text-lg font-semibold rounded-full hover:shadow-md border-2";
+
 const classes = computed(() =>
     props.active
-        ? `block w-10/12 m-auto py-2 text-center text-white text-lg font-semibold rounded-full hover:shadow-md hover:shadow-${props.bgColor} bg-${props.bgColor}`
-        : `block w-10/12 m-auto py-2 text-center text-black text-lg font-semibold rounded-full hover:shadow-md`
+        ? `${commonClasses} text-white border-${props.bgColor} bg-${props.bgColor}`
+        : `${commonClasses} text-gray border-white hover:border-gray`
 );
 </script>
 

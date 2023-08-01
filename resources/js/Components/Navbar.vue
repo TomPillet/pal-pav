@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NavLink from "./NavLink.vue";
-import Link from "./Link.vue";
+import { Link } from '@inertiajs/vue3';
 
 defineProps<{
   canLogin?: boolean;

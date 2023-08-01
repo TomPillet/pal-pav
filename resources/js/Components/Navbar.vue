@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import NavLink from "./NavLink.vue";
+import Link from "./Link.vue";
 
 defineProps<{
   canLogin?: boolean;
@@ -34,14 +35,14 @@ const navLinks = [
     <div class="basis-2/12 flex flex-col justify-end ">
         <ul class="flex flex-row justify-evenly mb-12 px-4">
             <li class="user-btns">
-                <a href="/login">
+                <Link :href="'/login'">
                     <font-awesome-icon class="user-btns-icon" :icon="['fas', 'user']" />
-                </a>
+                </Link>
             </li>
             <li class="user-btns">
-                <a href="#">
+                <Link :href="'#'">
                     <font-awesome-icon class="user-btns-icon" :icon="['fas', 'bell']" />
-                </a>
+                </Link>
             </li>
         </ul>
     </div>

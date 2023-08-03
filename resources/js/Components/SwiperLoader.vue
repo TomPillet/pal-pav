@@ -5,14 +5,16 @@ defineProps<{
     duration: string;
     width: string;
     height: string;
+    strokeWidthFirst: string;
+    strokeWidthSecond: string;
 }>();
 </script>
 
 <template>
     <div class="loader">
         <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124">
-            <circle class="circle-loader" cx="62" cy="62" r="48" fill="none" stroke="#201E24" stroke-width="16px" stroke-opacity="0.5"></circle>
-            <circle class="circle" cx="62" cy="62" r="48" fill="none" stroke="#fff" stroke-width="20px"></circle>
+            <circle class="circle-loader" cx="62" cy="62" r="36" fill="none" stroke="#201E24" :stroke-width="strokeWidthFirst" stroke-opacity="0.5"></circle>
+            <circle class="circle" cx="62" cy="62" r="36" fill="none" stroke="#fff" :stroke-width="strokeWidthSecond"></circle>
         </svg>
     </div>
 </template>
@@ -39,15 +41,17 @@ defineProps<{
 }
 
 @keyframes circle_stroke {
-  0% {
-    stroke-dashoffset: 380;
-  }
-
-  80%, 85% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: -370;
-  }
+    0% {
+        stroke-dashoffset: 380;
+    }
+    90% {
+        stroke-dashoffset: 80;
+    }
+    96% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -370;
+    }
 }
 </style>

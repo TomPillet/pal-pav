@@ -19,7 +19,7 @@ defineProps<{
         <div class="flex-none basis-60">
             <Navbar canLogin="canLogin" canRegister="canRegister" :activeSpace="uri" />
         </div>
-        <div class="grow bg-white pt-5 px-5 w-5/6">
+        <div class="grow bg-white pt-5 px-5 w-3/6">
             <AnimesAndMangasLayout v-if="uri === 'animes&mangas'"></AnimesAndMangasLayout>
             <BooksLayout v-if="uri === 'books'"></BooksLayout>
             <FilmsAndSeriesLayout v-if="uri === 'films&series'"></FilmsAndSeriesLayout>

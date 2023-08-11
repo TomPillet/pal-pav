@@ -1,20 +1,23 @@
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
+import { ref, defineProps, onUpdated } from 'vue';
 
-defineProps<{
-    duration: string;
+const props = defineProps<{
+    runDuration: string;
+    resetDuration: string;
     width: string;
     height: string;
     strokeWidthFirst: string;
     strokeWidthSecond: string;
-}>();
+    reset: boolean;
+}>()
+
 </script>
 
 <template>
     <div class="loader">
         <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124">
-            <circle class="circle-loader" cx="62" cy="62" r="36" fill="none" stroke="#201E24" :stroke-width="strokeWidthFirst" stroke-opacity="0.5"></circle>
-            <circle class="circle" cx="62" cy="62" r="36" fill="none" stroke="#fff" :stroke-width="strokeWidthSecond"></circle>
+            <circle cx="62" cy="62" r="36" fill="none" stroke="#201E24" :stroke-width="strokeWidthFirst" stroke-opacity="0.5"></circle>
+            <circle id="circle" :class="{ animateStroke: !reset, animateReset: reset }" cx="62" cy="62" r="36" fill="none" stroke="#fff" :stroke-width="strokeWidthSecond"></circle>
         </svg>
     </div>
 </template>
@@ -31,27 +34,35 @@ defineProps<{
   height: 100%;
 }
 
-.circle {
+#circle {
   transform: rotate(-90deg);
   transform-origin: center;
   stroke-dasharray: 380;
   stroke-dashoffset: 380;
-  animation: ease-in-out infinite forwards circle_stroke;
-  animation-duration: v-bind(duration);
 }
 
-@keyframes circle_stroke {
+.animateStroke {
+  animation: ease-in-out forwards v-bind(runDuration) run_stroke;
+}
+.animateReset {
+  animation: ease-in-out forwards v-bind(resetDuration) reset_stroke;
+}
+
+@keyframes run_stroke {
     0% {
         stroke-dashoffset: 380;
     }
-    90% {
-        stroke-dashoffset: 80;
+    95%, 100% {
+        stroke-dashoffset: 155;
     }
-    96% {
-        stroke-dashoffset: 0;
+}
+
+@keyframes reset_stroke {
+    0% {
+        stroke-dashoffset: 155;
     }
-    100% {
-        stroke-dashoffset: -370;
+    95%, 100% {
+        stroke-dashoffset: -240;
     }
 }
 </style>

@@ -32,7 +32,11 @@ export default {
             },
             fontFamily: {
                 'source': ['"Source Sans Pro"', ...defaultTheme.fontFamily.sans],
+                'montserrat': ['"Montserrat"', ...defaultTheme.fontFamily.sans]
             },
+            fontSize: {
+                'slideTitle': '1.5rem'
+            }
         },
     },
 

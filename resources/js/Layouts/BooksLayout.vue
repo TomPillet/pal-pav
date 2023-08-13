@@ -44,14 +44,14 @@ const onSlideChange = () => {
             @slideChangeTransitionStart="onSlideChange"
             @slideChangeTransitionEnd="onSlideChange"
         >
-            <swiper-slide :class="'shadow-inner-xl shadow-transparentGray bg-passion'">
-                <SwiperSlideLayout :statusMessage="'hello'" :messageTailwindColor="'white'" :pinTailwindColor="'working'"></SwiperSlideLayout>
+            <swiper-slide>
+                <SwiperSlideLayout :statusMessage="'En cours de lecture'" :textTailwindColor="'white'" :pinTailwindColor="'working'"></SwiperSlideLayout>
             </swiper-slide>
-            <swiper-slide :class="'shadow-inner-xl shadow-transparentGray bg-white'">
-                <SwiperSlideLayout :statusMessage="'test'" :messageTailwindColor="'gray'" :pinTailwindColor="'warning'"></SwiperSlideLayout>
+            <swiper-slide>
+                <SwiperSlideLayout :statusMessage="'A été lu'" :textTailwindColor="'white'" :pinTailwindColor="'success'"></SwiperSlideLayout>
             </swiper-slide>
-            <swiper-slide :class="'shadow-inner-xl shadow-transparentGray bg-black'">
-                <SwiperSlideLayout :statusMessage="'aled'" :messageTailwindColor="'white'" :pinTailwindColor="'beige'"></SwiperSlideLayout>
+            <swiper-slide>
+                <SwiperSlideLayout :statusMessage="'A lire'" :textTailwindColor="'white'" :pinTailwindColor="'beige'"></SwiperSlideLayout>
             </swiper-slide>
         </swiper>
     </div>

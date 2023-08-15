@@ -16,10 +16,10 @@ defineProps<{
     <Head title="Accueil" />
 
     <div class="flex">
-        <div class="flex-none basis-60">
+        <div class="flex-none basis-60 font-source">
             <Navbar canLogin="canLogin" canRegister="canRegister" :activeSpace="uri" />
         </div>
-        <div class="grow bg-white pt-5 px-5 w-3/6">
+        <div class="grow bg-white p-10 pb-0 w-3/6 font-montserrat tracking-tight">
             <AnimesAndMangasLayout v-if="uri === 'animes&mangas'"></AnimesAndMangasLayout>
             <BooksLayout v-if="uri === 'books'"></BooksLayout>
             <FilmsAndSeriesLayout v-if="uri === 'films&series'"></FilmsAndSeriesLayout>

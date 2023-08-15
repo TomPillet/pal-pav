@@ -35,7 +35,12 @@ export default {
                 'montserrat': ['"Montserrat"', ...defaultTheme.fontFamily.sans]
             },
             fontSize: {
-                'slideTitle': '1.5rem'
+                'extraSmallTitle': '1.2rem',
+                'smallTitle': '1.5rem',
+                'mediumTitle': '2rem',
+                'largeTitle': '3rem',
+                'extraLargeTitle': '5rem',
+                'massiveTitle': '10rem'
             }
         },
     },

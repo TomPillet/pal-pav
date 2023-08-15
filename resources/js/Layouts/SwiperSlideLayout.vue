@@ -18,7 +18,7 @@ const props = defineProps<{
       ></ObjectStatus>
 
       <div class="p-5 mt-auto">
-        <h3 class="text-slideTitle font-bold font-montserrat tracking-tight">Illiade - Homère</h3>
+        <h3 class="text-smallTitle font-bold">Illiade - Homère</h3>
         <!-- [TODO] Wrap le contenu avec des '...' à la fin si c'est trop long, à la place du scroll -->
         <p class="pr-6 max-h-24 max-w-full overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris magna augue, condimentum a finibus ultrices, ullamcorper vel mi. Vivamus tristique rutrum lorem in rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris magna augue, condimentum a finibus ultrices, ullamcorper vel mi. Vivamus tristique rutrum lorem in rhoncus.</p>
       </div>

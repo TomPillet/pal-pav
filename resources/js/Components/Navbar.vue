@@ -16,7 +16,7 @@ const navLinks = [
 </script>
 
 <template>
-  <div class="bg-white w-60 h-screen drop-shadow-2xl fixed flex flex-col">
+  <div class="bg-white w-60 h-screen drop-shadow-xl fixed flex flex-col">
     <div class="basis-1/12 flex flex-col justify-end">
         <img class="mx-auto" src="storage/images/logo-default.svg" alt="Logo PalPav" />
     </div>

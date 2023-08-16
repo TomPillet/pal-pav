@@ -41,7 +41,14 @@ export default {
                 'largeTitle': '3rem',
                 'extraLargeTitle': '5rem',
                 'massiveTitle': '10rem'
-            }
+            },
+            screens: {
+                'xs': '640px',
+                'sm': '900px',
+                '3xl': '1816px',
+                '4xl': '2120px',
+                '5xl': '2420px',
+            },
         },
     },
 

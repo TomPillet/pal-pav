@@ -2,6 +2,7 @@
 import { ref, onUpdated } from 'vue';
 
 const props = defineProps<{
+    fontWeight: string;
     message: string;
     pinTailwindColor: string;
 }>()
@@ -9,9 +10,9 @@ const props = defineProps<{
 </script>
 
 <template>
-    <div class="p-5 flex flex-row items-center">
-        <div :class="`h-3 w-3 rounded-full bg-${pinTailwindColor}`"></div>
-        <span :class="`ml-2 font-semibold text-xs`">{{ message }}</span>
+    <div class="flex flex-row items-center">
+        <div :class="`h-2 w-2 rounded-full bg-${pinTailwindColor}`"></div>
+        <span :class="`ml-[6px] mb-[1px] text-xs ${fontWeight}`">{{ message }}</span>
     </div>
 </template>
 

@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 // Local components
+import BookCard from "../Components/BookCard.vue";
 import SwiperLoader from "../Components/SwiperLoader.vue";
 import SwiperSlideLayout from "./SwiperSlideLayout.vue";
 
@@ -26,43 +27,28 @@ const onSlideChange = () => {
 const books = [
   {
     title: "AAAAAA",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
+    desc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "BBBBB",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
+    desc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "CCCC",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
+    desc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "DDDDD DDDDDDDDDD",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
+    desc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "EEE",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
-  },
-  {
-    title: "AAAAAA",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
-  },
-  {
-    title: "BBBBB",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
-  },
-  {
-    title: "CCCC",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
-  },
-  {
-    title: "DDDDD DDDDDDDDDD",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
-  },
-  {
-    title: "EEE",
-    desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaa aaaaaa aaa aaaaaaaaa",
+    desc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
 ];
 
@@ -135,7 +121,7 @@ const categories = [];
       </div>
     </div>
 
-    <div v-if="categories.length>0">
+    <div v-if="categories.length > 0">
       <h2 class="text-mediumTitle font-semibold text-center">
         Les catégories de livres
         <a href="#" class="text-base align-text-top text-bordeaux">{{ books.length }}</a>
@@ -144,8 +130,12 @@ const categories = [];
       <div
         class="grid xs:grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-8 place-content-center"
       >
-        <!-- <div class="flex flex-row flex-wrap justify-around"> -->
-        <div v-for="book in books" class="border w-[300px] h-[300px]"></div>
+       <div v-for="book in books" class="border w-[300px] h-[200px]"></div>
+        <!-- <BookCard
+          v-for="book in books"
+          :title="book.title"
+          :description="book.desc"
+        ></BookCard> -->
       </div>
     </div>
   </div>

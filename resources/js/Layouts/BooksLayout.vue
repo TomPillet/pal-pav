@@ -113,11 +113,11 @@ const categories = [];
       <div
         class="grid gap-8 xs:grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 5xl:grid-cols-7"
       >
-        <!-- <div class="flex flex-row flex-wrap justify-around"> -->
-        <div
+        <BookCard
           v-for="book in books"
-          class="border w-[300px] h-[300px] justify-self-center"
-        ></div>
+          :title="book.title"
+          :description="book.desc"
+        ></BookCard>
       </div>
     </div>
 
@@ -130,12 +130,7 @@ const categories = [];
       <div
         class="grid xs:grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-8 place-content-center"
       >
-       <div v-for="book in books" class="border w-[300px] h-[200px]"></div>
-        <!-- <BookCard
-          v-for="book in books"
-          :title="book.title"
-          :description="book.desc"
-        ></BookCard> -->
+        <div v-for="book in books" class="border w-[300px] h-[300px]"></div>
       </div>
     </div>
   </div>

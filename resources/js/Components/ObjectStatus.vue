@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineProps, onUpdated } from 'vue';
+import { ref, onUpdated } from 'vue';
 
 const props = defineProps<{
     message: string;

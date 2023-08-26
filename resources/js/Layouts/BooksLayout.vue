@@ -41,7 +41,7 @@ const books = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
-    title: "DDDDD DDDDDDDDDD",
+    title: "DDDDD DDDDDDDDDD DDDD DDDDDD",
     desc:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
@@ -81,6 +81,7 @@ const categories = [];
     >
       <swiper-slide>
         <SwiperSlideLayout
+          :backgroundImageURL="'storage/images/odyssee.jpg'"
           :statusMessage="'En cours de lecture'"
           :textTailwindColor="'white'"
           :pinTailwindColor="'working'"
@@ -88,6 +89,7 @@ const categories = [];
       </swiper-slide>
       <swiper-slide>
         <SwiperSlideLayout
+          :backgroundImageURL="'storage/images/odyssee.jpg'"
           :statusMessage="'A été lu'"
           :textTailwindColor="'white'"
           :pinTailwindColor="'success'"
@@ -95,6 +97,7 @@ const categories = [];
       </swiper-slide>
       <swiper-slide>
         <SwiperSlideLayout
+          :backgroundImageURL="'storage/images/odyssee.jpg'"
           :statusMessage="'A lire'"
           :textTailwindColor="'white'"
           :pinTailwindColor="'beige'"
@@ -105,7 +108,7 @@ const categories = [];
 
   <div>
     <div>
-      <h2 class="text-mediumTitle font-semibold text-center">
+      <h2 class="text-mediumTitle font-semibold text-center mb-4">
         Les livres dans ma pile à lire
         <a href="#" class="text-base align-text-top text-bordeaux">{{ books.length }}</a>
       </h2>
@@ -114,9 +117,11 @@ const categories = [];
         class="grid gap-8 xs:grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 5xl:grid-cols-7"
       >
         <BookCard
-          v-for="book in books"
+          v-for="(book, index) in books"
+          :id="index"
           :title="book.title"
           :description="book.desc"
+          @click="console.log('test')"
         ></BookCard>
       </div>
     </div>

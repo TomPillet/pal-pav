@@ -121,6 +121,7 @@ const categories = [];
           :id="index"
           :title="book.title"
           :description="book.desc"
+          :additionalInfos="'À rendre le 13/09/23'"
           @click="console.log('test')"
         ></BookCard>
       </div>

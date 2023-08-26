@@ -6,6 +6,7 @@ const props = defineProps<{
   id: string;
   title: string;
   description: string;
+  additionalInfos: string;
 }>();
 
 const titleID = "bookTitle-" + props.id;
@@ -24,21 +25,33 @@ onMounted(() => {
 
 <template>
   <div class="shadow-md rounded-lg w-[300px] h-[300px] justify-self-center">
-    <div class="bg-img h-[120px] rounded-t-lg"></div>
+    <div class="bg-img h-2/5 rounded-t-lg"></div>
 
-    <div class="p-2">
+    <div class="relative h-3/5 p-2">
       <ObjectStatus
         :fontWeight="'font-light'"
         :message="'En cours de lecture'"
         :pinTailwindColor="'working'"
       ></ObjectStatus>
 
-      <!-- [TODO] - On title and description hover, if there is "..." at the end, then display infobox with full text -->
-
-      <h3 :id="titleID" :class="`mt-1 text-extraSmallTitle font-semibold line-clamp-1`" :title="(displayFullTitleBox) ? title : ''">
+      <h3
+        :id="titleID"
+        :class="`mt-1 text-extraSmallTitle font-semibold line-clamp-1`"
+        :title="displayFullTitleBox ? title : ''"
+      >
         {{ title }}
       </h3>
-      <p :id="descID" class="px-1 text-xs line-clamp-4" :title="(displayFullDescBox) ? description : ''">{{ description }}</p>
+      <p
+        :id="descID"
+        class="px-1 text-xs line-clamp-4"
+        :title="displayFullDescBox ? description : ''"
+      >
+        {{ description }}
+      </p>
+
+      <p id="moreInfos" class="absolute bottom-0 p-1 text-lightgray text-sm">
+        {{ additionalInfos }}
+      </p>
     </div>
   </div>
 </template>

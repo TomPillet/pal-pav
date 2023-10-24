@@ -6,7 +6,7 @@ const props = defineProps<{
   id: string;
   title: string;
   description: string;
-  additionalInfos: string;
+  additionalInfos?: string;
 }>();
 
 const titleID = "bookTitle-" + props.id;

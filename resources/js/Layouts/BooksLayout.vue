@@ -118,7 +118,7 @@ const categories = [];
       >
         <BookCard
           v-for="(book, index) in books"
-          :id="index"
+          :id="index.toString()"
           :title="book.title"
           :description="book.desc"
           :additionalInfos="'À rendre le 13/09/23'"
